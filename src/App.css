@@ -1,0 +1,292 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,500;0,600;0,700;1,300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+* {
+  box-sizing: border-box;
+  /* font-family: "Montserrat", sans-serif; */
+  /* font-family: "Montserrat Alternates", sans-serif; */
+  font-family: "Roboto", sans-serif;
+  letter-spacing: 2px;
+}
+
+header {
+  border-radius: 20px;
+  color: #dfdfe2;
+  width: 250px;
+  height: 87vh;
+  position: fixed;
+  left: 2vh;
+  top: 8vh;
+  background: linear-gradient(
+    0deg,
+    rgba(186, 84, 245, 1) 0%,
+    rgba(225, 78, 202, 1) 99%
+  );
+}
+header ul {
+  list-style: none;
+}
+header ul li {
+  margin-top: 50px;
+}
+header ul li a {
+  text-decoration: none;
+  color: #dfdfe2;
+  padding: 20px;
+  border-radius: 10px;
+  transition: all 1s;
+  font-size: 18px;
+}
+header ul li a:hover {
+  text-decoration: underline;
+  color: #fff;
+}
+header ul li img {
+  width: 17px;
+}
+
+#stock_div {
+  background-color: #1e1e2f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 700px;
+}
+#stock form {
+  margin-top: 50px;
+}
+#stock .my-para {
+  text-align: center;
+  color: #dfdfe2;
+}
+#stock #dropdown {
+  width: 20%;
+  height: 50px;
+  background-color: #27293d;
+  border-radius: 10px;
+  border: 1px solid #dfdfe2;
+  color: #dfdfe2;
+  font-size: 23px;
+  padding: 5px;
+  padding-left: 6.5%;
+}
+#stock #dropdown option {
+  text-align: center;
+}
+#selected-result {
+  margin-top: 20px;
+  color: #dfdfe2;
+  font-size: 24px;
+}
+
+#title-stock {
+  margin-top: 50px;
+
+  color: #dfdfe2;
+  font-size: 40px;
+}
+#stock #plot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  padding: 30px;
+}
+#forex {
+  background: #1e1e2f;
+  height: 100vh;
+  font-family: "Montserrat", sans-serif;
+  color: #8b8b8d;
+}
+#forex .container {
+  padding-top: 20vh;
+  padding-left: 15%;
+  width: 50vw;
+  margin: 0 auto;
+}
+
+#forex .header {
+  text-align: center;
+}
+#forex .betrag {
+  display: flex;
+  justify-content: space-evenly;
+}
+#forex .main {
+  padding-top: 10%;
+}
+#forex .ergebnis {
+  text-align: center;
+}
+#forex .date {
+  padding-top: 10%;
+  font-size: 1em;
+}
+#forex .button {
+  margin-top: 5%;
+  border-radius: 15px;
+  padding: 5px 10px;
+  border: #0b486b 1px solid;
+  transition: all 1s;
+}
+#forex .button:hover {
+  /* background: linear-gradient(250deg, #0b486b, #3b8686); */
+  background-color: #999;
+}
+#forex #currency1 {
+  border-radius: 10px;
+  padding: 5px 10px;
+  border: #0b486b 1px solid;
+}
+#forex #input-button {
+  border-radius: 15px;
+  padding: 7px 10px;
+  border: #0b486b 1px solid;
+}
+#forex .result {
+  font-size: 2.5em;
+}
+
+#crypto {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 100px 100px;
+  background-color: #1e1e2e;
+}
+#crypto > div {
+  text-align: right;
+  color: #dfdfe2;
+  margin-bottom: 80px;
+  margin-top: 20px;
+}
+#crypto > div p {
+  margin-left: auto;
+  width: 40%;
+  text-align: right;
+}
+#crypto article {
+  /* margin-left: auto; */
+}
+#crypto form,
+#stock form {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 1s;
+  width: 50px;
+  height: 50px;
+  background: white;
+  box-sizing: border-box;
+  border-radius: 25px;
+  border: 4px solid white;
+  padding: 5px;
+}
+
+#crypto form input,
+#stock form input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 42.5px;
+  line-height: 30px;
+  outline: 0;
+  border: 0;
+  display: none;
+  font-size: 1em;
+  border-radius: 20px;
+  padding: 0 20px;
+}
+
+#crypto .fa,
+#stock .fa {
+  box-sizing: border-box;
+  padding: 10px;
+  width: 42.5px;
+  height: 42.5px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 50%;
+  color: #07051a;
+  text-align: center;
+  font-size: 1.2em;
+  transition: all 1s;
+}
+
+#crypto form:hover,
+#stock form:hover {
+  width: 200px;
+  cursor: pointer;
+}
+
+#crypto form:hover input,
+#stock form:hover input {
+  display: block;
+}
+
+#crypto form:hover .fa,
+#stock form:hover .fa {
+  background: #07051a;
+  color: white;
+}
+
+/* #crypto article > div {
+  width: 100%;
+} */
+
+/* #crypto .Plot {
+  width: 90%;
+} */
+#news .container {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+#news h1 {
+  color: #dfdfe2;
+  text-align: right;
+  padding-left: 85px;
+  padding-top: 10px;
+  font-size: 32px;
+}
+#news .card {
+  width: 250px;
+  height: 300px;
+  margin: 40px;
+  background-color: #dfdfe2;
+  border-radius: 20px;
+  color: #dfdfe2;
+}
+#news .card-container {
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+#news .card-container a {
+  text-decoration: none;
+  color: #dfdfe2;
+  background-color: #0b486b;
+  padding: 10px 20px;
+  border-radius: 5px;
+  /* background-color: #dfdfe2; */
+}
+#news img {
+  width: 100%;
+  height: 200px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+@media (max-width: 1000px) {
+  header {
+    opacity: 0;
+    transition: all 0.5s;
+  }
+}
+@media (max-width: 500px) {
+}
