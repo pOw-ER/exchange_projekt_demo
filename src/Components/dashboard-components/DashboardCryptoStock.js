@@ -1,4 +1,5 @@
 import React from "react";
+import {motion} from "framer-motion"
 
 function DashboardCryptoStock(props) {
   // console.log(props.info1);
@@ -25,7 +26,10 @@ function DashboardCryptoStock(props) {
   // }
 
   return (
-    <div className="crypto-container">
+    <motion.div className="crypto-container"
+    initial={{x:60,y:-55, opacity:0}}
+    animate={{x:0,y:0,opacity:1}}
+    transition={{delay:0.5,duration:1.3}}>
       {/* <table>
         <tr>
           <th>Name</th>
@@ -61,7 +65,7 @@ function DashboardCryptoStock(props) {
           </td>
         </tr>
       </table> */}
-      <table class="table table-striped table-dark">
+      <table class="table  table-dark">
         <thead>
           <tr>
             <th scope="col"></th>
@@ -78,10 +82,11 @@ function DashboardCryptoStock(props) {
             </th>
             <td> Bitcoin</td>
             <td>
-              {props.infoCrypto &&
+              {/* {props.infoCrypto &&
                 props.infoCrypto["Time Series (Digital Currency Monthly)"][
                   "2021-03-25"
-                ]["4b. close (USD)"]}
+                ]["4b. close (USD)"]} */}
+                53.130
             </td>
             <td>
               {/* {(
@@ -98,7 +103,7 @@ function DashboardCryptoStock(props) {
                   ) -
                   1
               ).toFixed(2)} */}
-              0.05%
+              2.65%
             </td>
           </tr>
           <tr>
@@ -111,7 +116,7 @@ function DashboardCryptoStock(props) {
                 props.infoCrypto1["Time Series (Digital Currency Monthly)"][
                   "2021-03-24"
                 ]["4b. close (USD)"]} */}
-              500.00
+              1.600
             </td>
             <td>
               {/* {(
@@ -128,7 +133,7 @@ function DashboardCryptoStock(props) {
                   ) -
                   1
               ).toFixed(2)} */}
-              0.05%
+              2.25%
             </td>
           </tr>
           <tr>
@@ -141,7 +146,7 @@ function DashboardCryptoStock(props) {
                 props.infoCrypto2["Time Series (Digital Currency Monthly)"][
                   "2021-03-24"
                 ]["4b. close (USD)"]} */}
-              500.00
+              248.00
             </td>
             <td>
               {/* {(
@@ -158,7 +163,7 @@ function DashboardCryptoStock(props) {
                   ) -
                   1
               ).toFixed(2)} */}
-              0.05%
+              2.45%
             </td>
           </tr>
           <tr>
@@ -171,7 +176,7 @@ function DashboardCryptoStock(props) {
                 props.infoCrypto3["Time Series (Digital Currency Monthly)"][
                   "2021-03-24"
                 ]["4b. close (USD)"]} */}
-              500.00
+              0.500
             </td>
             <td>
               {/* {(
@@ -188,16 +193,13 @@ function DashboardCryptoStock(props) {
                   ) -
                   1
               ).toFixed(2)} */}
-              0.05%
+              11.25%
             </td>
           </tr>
         </tbody>
       </table>
-      <select name="" id="">
-        <option value="">Month</option>
-        <option value="">Feb.</option>
-      </select>
-    </div>
+     
+    </motion.div>
   );
 }
 

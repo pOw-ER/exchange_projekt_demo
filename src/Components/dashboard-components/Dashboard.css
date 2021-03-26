@@ -7,15 +7,18 @@
 #dashboard .news-header {
   padding-top: 40px;
   font-weight: 300;
+  font-size: 0.1rem;
 }
 #dashboard .newsOne {
   display: grid;
   place-items: center;
   background-color: rgb(180, 180, 180);
   background-blend-mode: multiply;
-  height: 200px;
+  height: 150px;
   outline: none;
-  border-radius: 15px;
+  /* border-radius: 15px; */
+  /* border-top-right-radius: 15px; */
+  
 }
 
 #dashboard .newsOne:hover {
@@ -36,45 +39,53 @@
   margin: auto;
 }
 #dashboard .stock-container {
-  width: 350px;
-  border: solid;
+  width: 450px;
+  
   border-radius: 15px;
   overflow: hidden;
-  background-color: black;
+  
   margin-top: 30px;
   margin-right: 10px;
 }
 
 #dashboard .exchange-container {
-  flex: 0 1 auto;
-  margin: auto;
+  /* flex: 0 1 auto; */
+  /* margin: auto; */
   margin-top: 50px;
-  border: solid;
+  
   border-radius: 15px;
-  background-color: black;
-  max-width: 700px;
+  
+  width: 400px;
 }
 
-#dashboard .ex {
+#dashboard #ex {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: wrap; 
+  justify-content: center;
+  width: 100%;
+  margin: auto;
+  padding-right: 100px;
 }
 
 #dashboard .crypto-container {
-  width: 350px;
-  border: solid;
+  width: 400px;
+  
   border-radius: 15px;
   overflow: hidden;
-  background-color: black;
+  
   margin-top: 30px;
+  margin-right: 10px;
 }
 
 #dashboard .news-container {
-  width: 50%;
-  margin: auto;
+  width: 500px;
+  /* margin: auto; */
+  border-radius: 15px;
+  overflow: hidden;
+  margin-left: 10px;
 }
 #dashboard {
-  background-color: #27293d;
+  background-color: #1E1E2F;
 }
 
 #dashboard #dashboard-header {
@@ -91,26 +102,30 @@
   color: #fff;
   text-align: left;
 }
-#dashboard .dashboard-thirdRow {
+/* #dashboard .dashboard-thirdRow {
   width: 60%;
   margin: auto;
-}
+} */
 
 #dashboard img {
-  width: 20%;
+  width: 28px;
 }
 #dashboard .crypto-container img {
-  width: 40%;
+  width: 25px;
 }
 
 #dashboard #usaImg {
-  width: 15%;
+  width: 28px;
 }
 #dashboard #usaImg2 {
-  width: 13%;
+  width: 28px;
   padding-right: 5px;
 }
 #dashboard #chinaImg {
-  width: 13%;
+  width: 28px;
   padding-right: 5px;
+}
+
+#dashboard .stockimg{
+  width: 28px;
 }

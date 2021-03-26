@@ -54,10 +54,10 @@ export default class SimpleSlider extends Component {
                   }
                 }
               >
-                <h5 className="newsHeader">
+                <p className="newsHeader">
                   {this.state.background1 &&
                     this.state.background1.articles[0].title}{" "}
-                </h5>
+                </p>
               </div>
             </a>
           </div>
@@ -82,10 +82,10 @@ export default class SimpleSlider extends Component {
                   }
                 }
               >
-                <h5 className="newsHeader">
+                <p className="newsHeader">
                   {this.state.background1 &&
                     this.state.background1.articles[5].title}{" "}
-                </h5>
+                </p>
               </div>
             </a>
           </div>
@@ -109,10 +109,10 @@ export default class SimpleSlider extends Component {
                   }
                 }
               >
-                <h5 className="newsHeader">
+                <p className="newsHeader">
                   {this.state.background1 &&
                     this.state.background1.articles[6].title}{" "}
-                </h5>
+                </p>
               </div>
             </a>
           </div>

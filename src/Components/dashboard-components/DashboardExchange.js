@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import Axios from "axios";
+import {motion} from "framer-motion"
 
 const Apis = [
   "0WBEFUGJFRATQ458",
@@ -12,7 +13,7 @@ const Apis = [
 function DashboardExchange(props) {
   const usdShort = "USD";
   const eurShort = "EUR";
-  // const cnyShort = "CNY";
+  const cnyShort = "CNY";
 
   const [usd, setUsd] = useState(null);
   const [eur, setEur] = useState(null);
@@ -22,18 +23,18 @@ function DashboardExchange(props) {
   const [cnyUsd, setCnyUsd] = useState(null);
   const [eurCny, setEurCny] = useState(null);
 
-  // useEffect((props) => {
-  //   const test = [];
+  useEffect((props) => {
+    const test = [];
 
-  //   Axios.get(
-  //     `https://www.alphavantage.co/query?function=FX_MONTHLY&from_symbol=${usdShort}&to_symbol=${eurShort}&apikey=WASLX9XSH9KER05U`
-  //   ).then((response) => {
-  //     setUsd(
-  //       response.data["Time Series FX (Monthly)"]["2021-03-25"]["4. close"]
-  //     );
-  //     console.log(response.data);
-  //   });
-  // }, []);
+    Axios.get(
+      `https://www.alphavantage.co/query?function=FX_MONTHLY&from_symbol=${usdShort}&to_symbol=${eurShort}&apikey=WASLX9XSH9KER05U`
+    ).then((response) => {
+      setUsd(
+        // response.data["Time Series FX (Monthly)"]["2021-03-25"]["4. close"]
+      );
+      console.log(response.data);
+    });
+  }, []);
 
   // useEffect((props) => {
   //   Axios.get(
@@ -91,8 +92,11 @@ function DashboardExchange(props) {
   // }, []);
 
   return (
-    <div className="exchange-container">
-      <table class="table table-striped table-dark">
+    <motion.div className="exchange-container"
+    initial={{x:-60,y:55, opacity:0}}
+    animate={{x:0,y:-15,opacity:1}}
+    transition={{delay:0.5,duration:1.3}}>
+      <table class="table table-dark">
         <thead>
           <tr>
             <th scope="col"></th>
@@ -119,33 +123,30 @@ function DashboardExchange(props) {
             </th>
             <td> 1$</td>
             <td>1.8003</td>
-            <td>1.8003</td>
+            <td>6,54</td>
           </tr>
           <tr>
             <th scope="row">
               <img src="/images/eur1.png" alt="" />
               EUR
             </th>
-            <td> 1.8003</td>
+            <td> 1.18</td>
             <td>1€</td>
-            <td>1.8003</td>
+            <td>7,71</td>
           </tr>
           <tr>
             <th scope="row">
               <img id="chinaImg" src="/images/china.png" alt="" />
               CNY
             </th>
-            <td>1.8003 </td>
-            <td>1.8003</td>
+            <td>0,15 </td>
+            <td>0.13</td>
             <td>1¥</td>
           </tr>
         </tbody>
       </table>
-      <select name="" id="">
-        <option value="">Month</option>
-        <option value="">Feb.</option>
-      </select>
-    </div>
+      
+    </motion.div>
   );
 }
 
