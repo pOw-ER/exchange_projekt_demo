@@ -1,15 +1,31 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,500;0,600;0,700;1,300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Della+Respira&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant:wght@400;500;600;700&display=swap");
 * {
   box-sizing: border-box;
-  /* font-family: "Montserrat", sans-serif; */
-  /* font-family: "Montserrat Alternates", sans-serif; */
-  font-family: "Roboto", sans-serif;
+  /* font-family: "Cormorant", serif; */
   letter-spacing: 2px;
 }
-
+#logo {
+  margin-top: 20px;
+  width: 100px;
+  margin-left: 30px;
+}
+#logo img {
+  width: 150%;
+}
+.fa-bars {
+  display: inline-block;
+  color: #fff;
+  font-size: 40px;
+  margin-top: 25px;
+  margin-left: 25px;
+  opacity: 0;
+  transition: all 0.5s;
+}
 header {
+  font-weight: 400;
   border-radius: 20px;
   color: #dfdfe2;
   width: 250px;
@@ -46,12 +62,12 @@ header ul li img {
 }
 
 #stock_div {
+  padding-left: 20%;
   background-color: #1e1e2f;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 700px;
 }
 #stock form {
   margin-top: 50px;
@@ -61,15 +77,14 @@ header ul li img {
   color: #dfdfe2;
 }
 #stock #dropdown {
-  width: 20%;
-  height: 50px;
+  width: 200px;
+  height: 40px;
   background-color: #27293d;
   border-radius: 10px;
   border: 1px solid #dfdfe2;
   color: #dfdfe2;
-  font-size: 23px;
+  font-size: 18px;
   padding: 5px;
-  padding-left: 6.5%;
 }
 #stock #dropdown option {
   text-align: center;
@@ -82,7 +97,6 @@ header ul li img {
 
 #title-stock {
   margin-top: 50px;
-
   color: #dfdfe2;
   font-size: 40px;
 }
@@ -92,21 +106,28 @@ header ul li img {
   border-radius: 50%;
   padding: 30px;
 }
+
 #forex {
   background: #1e1e2f;
   height: 100vh;
   font-family: "Montserrat", sans-serif;
-  color: #8b8b8d;
 }
 #forex .container {
-  padding-top: 20vh;
   padding-left: 15%;
+  padding-top: 13vh;
   width: 50vw;
   margin: 0 auto;
 }
-
 #forex .header {
   text-align: center;
+  color: #dfdfe2;
+}
+#forex .title {
+  font-family: "Anton", sans-serif;
+  font-size: 2em;
+}
+#forex .para {
+  font-family: "Della Respira", serif;
 }
 #forex .betrag {
   display: flex;
@@ -117,34 +138,89 @@ header ul li img {
 }
 #forex .ergebnis {
   text-align: center;
+  color: #dfdfe2;
+  font-family: "Della Respira", serif;
 }
 #forex .date {
   padding-top: 10%;
   font-size: 1em;
-}
-#forex .button {
-  margin-top: 5%;
-  border-radius: 15px;
-  padding: 5px 10px;
-  border: #0b486b 1px solid;
-  transition: all 1s;
-}
-#forex .button:hover {
-  /* background: linear-gradient(250deg, #0b486b, #3b8686); */
-  background-color: #999;
+  font-family: "Della Respira", serif;
+  letter-spacing: 3px;
+  word-spacing: 3px;
 }
 #forex #currency1 {
   border-radius: 10px;
-  padding: 5px 10px;
   border: #0b486b 1px solid;
+  font-family: "Della Respira", serif;
 }
 #forex #input-button {
   border-radius: 15px;
-  padding: 7px 10px;
+  padding: 2% 6%;
   border: #0b486b 1px solid;
+  background: #27293d;
+  color: #dfdfe2;
+  margin-top: 4vh;
+  font-family: "Della Respira", serif;
 }
 #forex .result {
-  font-size: 2.5em;
+  margin-top: 5%;
+  font-size: 2em;
+  color: #dfdfe2;
+  font-family: "Anton", sans-serif;
+}
+#forex .betrag select {
+  background: #27293d;
+  color: #dfdfe2;
+  padding: 2% 3%;
+  border: none;
+  font-size: 1em;
+  box-shadow: 0 5px 48px #1e1e2f;
+  -webkit-appearance: button;
+  outline: none;
+}
+#forex .betrag:hover:before {
+  background: #1e1e2f;
+}
+#forex #button {
+  margin-top: 4vh;
+  border-radius: 15px;
+  padding: 1% 4%;
+  border: #08324b 1px solid;
+  background: #27293d;
+  color: #dfdfe2;
+  font-family: "Della Respira", serif;
+  overflow: hidden;
+  position: relative;
+  text-decoration: none;
+  transition: 0.2s transform ease-in-out;
+  will-change: transform;
+  z-index: 0;
+}
+#forex #button::after {
+  border-radius: 3rem;
+  content: "";
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translate(-100%, 0) rotate(10deg);
+  transform-origin: top left;
+  transition: 0.2s transform ease-out;
+  will-change: transform;
+  z-index: -1;
+  font-size: 4rem;
+  padding: 10px;
+}
+#forex #button:hover::after {
+  transform: translate(0, 0);
+}
+#forex #button:hover {
+  border: 2px solid #dfdfe2;
+  color: #dfdfe2;
+  transform: scale(1.05);
+  will-change: transform;
 }
 
 #crypto {
@@ -152,8 +228,21 @@ header ul li img {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 40px 100px 100px;
+  padding: 40px 15% 15%;
   background-color: #1e1e2e;
+}
+#buttons {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+#buttons button {
+  border: none;
+  background-color: #0b486b;
+  color: #dfdfe2;
+  border-radius: 20px;
+  padding: 10px;
+  margin: 10px;
 }
 #crypto > div {
   text-align: right;
@@ -163,12 +252,10 @@ header ul li img {
 }
 #crypto > div p {
   margin-left: auto;
-  width: 40%;
+  width: 80%;
   text-align: right;
 }
-#crypto article {
-  /* margin-left: auto; */
-}
+
 #crypto form,
 #stock form {
   position: relative;
@@ -233,14 +320,10 @@ header ul li img {
   background: #07051a;
   color: white;
 }
+#crypto article {
+  flex: 1 0 60%;
+}
 
-/* #crypto article > div {
-  width: 100%;
-} */
-
-/* #crypto .Plot {
-  width: 90%;
-} */
 #news .container {
   display: flex;
   justify-content: flex-end;
@@ -287,6 +370,33 @@ header ul li img {
     opacity: 0;
     transition: all 0.5s;
   }
+  .fa-bars {
+    opacity: 1;
+  }
+  #forex .container {
+    padding-left: 0;
+  }
+  #stock_div {
+    padding-left: 0;
+  }
+  #crypto {
+    padding: 0 5% 5%;
+  }
+
+  #crypto > div {
+    text-align: center;
+  }
+
+  #crypto > div p {
+    text-align: center;
+    width: 100%;
+  }
 }
 @media (max-width: 500px) {
+  #buttons {
+    justify-content: space-between;
+  }
+  #buttons button {
+    flex: 1 0 40%;
+  }
 }

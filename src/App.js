@@ -10,12 +10,10 @@ function App() {
 
   return (
     <div className="App">
-      <nav id="vertical-nav">
-
-      </nav>
+      <i class="fas fa-bars"></i>
       <header>
+        <div id="logo"><img src="/img/7.png" alt="" /></div>
         <nav>
-          <div></div>
           <ul>
             <li><img src="/img/dashboard_w.png" alt="dashboard-icon" /><Link to="/">Dashboard</Link></li>
             <li><img src="/img/stocksc.png" alt="stock-icon" /><Link to="/stock">Stock</Link></li>

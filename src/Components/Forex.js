@@ -49,11 +49,11 @@ class Forex extends Component {
   };
   render() {
     return (
-      < section id="forex" >
+      <section id="forex">
         <div className="container">
           <div className="header">
-            <h1>Forex</h1>
-            <p>Want to know,how much is your money in other currenciest?</p>
+            <h1 className="title">Forex</h1>
+            <p className="para">Want to know,how much is your money in other currenciest?</p>
           </div>
           <div className="main">
             <div className="betrag">
@@ -63,12 +63,13 @@ class Forex extends Component {
                 id="currency1"
                 onChange={this.handleCurrency1}
               >
-                <option value="EUR">EUR</option>
-                <option value="USD">USD</option>
-                <option value="CNY">YUAN</option>
-                <option value="PHP">PHP</option>
-                <option value="AUD">AUD</option>
+                <option value="EUR" >EUR</option>
+                <option value="USD" >USD</option>
+                <option value="CNY" >YUAN</option>
+                <option value="PHP" >PHP</option>
+                <option value="AUD" >AUD</option>
               </select>
+
 
               <select
                 name=""
@@ -86,11 +87,12 @@ class Forex extends Component {
             </div>
             <br />
             <div className="ergebnis">
+              <i class="las la-chart-pie"></i>
               <input id="input-button" type="number" onChange={this.handleInput} />
               <br />
-              <input type="button" className="button" value="Exchange" onClick={this.call} />
+              <input type="button" id="button" className="coolBeans" value="Exchange" onClick={this.call} />
               <br />
-              <h2 className="date">Der Aktuelle Wechselkurs von {this.state.currency1} zu {this.state.currency2} ist:</h2>
+              <h2 className="date">Der Aktuelle Wechselkurs von {this.state.currency1} zu {this.state.currency2} ist</h2>
               <h1 className="result">{this.state.result}</h1>
             </div>
           </div>

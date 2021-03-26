@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import Plot from 'react-plotly.js';
 import axios from 'axios'
 
-
 class Stock extends Component {
   constructor(props) {
     super(props);
@@ -11,11 +10,6 @@ class Stock extends Component {
       stockChartXValues: [],
       stockChartYValues: [],
       inputValue: '',
-      searchCrName: '',
-      searchCrCode: '',
-      searchCrMarkt: '',
-      searchCrDataX: [],
-      searchCrDataY: [],
     }
   }
 
@@ -36,14 +30,11 @@ class Stock extends Component {
           stockChartXValues: stockChartXValues_1,
           stockChartYValues: stockChartYValues_1,
           stockName: response.data["Meta Data"]["2. Symbol"],
-          // btcCode: response.data["Meta Data"]["2. Digital Currency Code"],
-          // markt: response.data["Meta Data"]["5. Market Name"]
         });
       })
   }
 
   handleDropdownChange = (event) => {
-
     this.setState({ stockName: event.target.value }, () => {
       let stockChartXValues_1 = [];
       let stockChartYValues_1 = [];
@@ -59,8 +50,6 @@ class Stock extends Component {
             stockChartXValues: stockChartXValues_1,
             stockChartYValues: stockChartYValues_1,
             stockName: response.data["Meta Data"]["2. Symbol"],
-            // btcCode: response.data["Meta Data"]["2. Digital Currency Code"],
-            // markt: response.data["Meta Data"]["5. Market Name"]
           });
         })
     }
@@ -83,8 +72,6 @@ class Stock extends Component {
             stockChartXValues: searchCrDataX_1,
             stockChartYValues: searchCrDataY_1,
             stockName: response.data["Meta Data"]["2. Symbol"],
-            // searchCrCode: response.data["Meta Data"]["2. Digital Currency Code"],
-            // searchCrMarkt: response.data["Meta Data"]["5. Market Name"]
           });
         })
     }
@@ -149,107 +136,3 @@ class Stock extends Component {
 }
 
 export default Stock;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import React, { Component } from 'react';
-// import Plot from 'react-plotly.js';
-
-
-
-// class Stock extends Component {
-//   constructor(props) {
-//     super(props);
-//     this.state = {
-//       selectValue: "FB",
-//       stockChartXValues: [],
-//       stockChartYValues: []
-//     }
-//   }
-
-//   componentDidMount() {
-//     this.fetchStock();
-//   }
-
-//   fetchStock() {
-//     const API_KEY = 'HGJWFG4N8AQ66ICD';
-//     let API_Call = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=${this.state.selectValue}&outputsize=compact&apikey=${API_KEY}`;
-//     let stockChartXValuesFunction = [];
-//     let stockChartYValuesFunction = [];
-
-//     fetch(API_Call)
-//       .then(
-//         (response) => {
-//           return response.json();
-//         }
-//       )
-//       .then(
-//         (data) => {
-//           console.log(data);
-
-//           for (var key in data['Time Series (Daily)']) {
-//             stockChartXValuesFunction.push(key);
-//             stockChartYValuesFunction.push(data['Time Series (Daily)'][key]['1. open']);
-//           }
-
-//           console.log(stockChartXValuesFunction);
-//           console.log(stockChartYValuesFunction);
-//           this.setState({
-//             stockChartXValues: stockChartXValuesFunction,
-//             stockChartYValues: stockChartYValuesFunction
-//           });
-//         }
-//       )
-//   }
-//   handleDropdownChange = (e) => {
-
-//     this.setState({ selectValue: e.target.value });
-//   }
-
-
-//   render() {
-//     return (
-//       <section id="Stock">
-
-//         <select id="dropdown" onChange={this.handleDropdownChange} value={this.state.selectValue} >
-//           <option value="FB">Facebook</option>
-//           <option value="AMZN">Amazon</option>
-//           <option value="EBAY">Ebay</option>
-//           <option value="TLO">Tesla</option>
-//           <option value="DAI">Mercedes Benz</option>
-//           <option value="BMW">BMW</option>
-//           <option value="AHLA">Alibaba</option>
-//           <option value="ABEA">Google Alphabet</option>
-//         </select>
-//         <div id="selected-result">Selected value is : {this.state.selectValue}</div>
-//         <h1 id="title"> Stock Market</h1>
-//         <Plot
-//           data={[
-//             {
-//               x: this.state.stockChartXValues,
-//               y: this.state.stockChartYValues,
-//               type: 'scatter',
-//               mode: 'gauge+delta',
-//               marker: { color: 'green' },
-//             }
-//           ]}
-//           layout={{ width: 720, height: 440, title: 'A Fancy Plot' }}
-//         />
-//       </section>
-//     )
-//   }
-// }
-
-// export default Stock;

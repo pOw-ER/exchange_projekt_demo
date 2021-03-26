@@ -118,7 +118,30 @@ class Crypto extends Component {
     }
     );
   }
-
+  buttonChangeCrypto = (event) => {
+    this.setState({ inputValue: event.target.id }, () => {
+      console.log(this.state.inputValue);
+      let searchCrDataX_1 = []
+      let searchCrDataY_1 = []
+      axios.get(`https://www.alphavantage.co/query?function=DIGITAL_CURRENCY_MONTHLY&symbol=${this.state.inputValue}&market=EUR&apikey=${MY_API_KEY_CRYPTO}`)
+        .then(response => {
+          console.log(response.data);
+          console.log(response.data["Meta Data"]);
+          for (let key in response.data["Time Series (Digital Currency Monthly)"]) {
+            searchCrDataX_1.push(key)
+            searchCrDataY_1.push(response.data["Time Series (Digital Currency Monthly)"][key]["4a. close (EUR)"])
+          }
+          this.setState({
+            searchCrDataX: searchCrDataX_1,
+            searchCrDataY: searchCrDataY_1,
+            searchCrName: response.data["Meta Data"]["3. Digital Currency Name"],
+            searchCrCode: response.data["Meta Data"]["2. Digital Currency Code"],
+            searchCrMarkt: response.data["Meta Data"]["5. Market Name"]
+          });
+        })
+    }
+    );
+  }
 
   render() {
     return (
@@ -128,8 +151,24 @@ class Crypto extends Component {
           <i onClick={this.handleChangeCrypto} className="fa fa-search"></i>
         </form>
         <div>
-          <h1>Crypto</h1>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, facilis tempora mollitia autem tenetur, harum voluptatum ipsam delectus temporibus, molestiae magni id eum sed ipsa velit rem deleniti. Voluptatibus, labore!</p>
+          <div>
+            <h1>Crypto Currencies</h1>
+            <p>A cryptocurrency, crypto currency or crypto is a digital asset designed to work as a medium of exchange wherein individual coin ownership records are stored in a ledger existing in a form of computerized database using strong cryptography to secure transaction records, to control the creation of additional coins, and to verify the transfer of coin ownership.</p>
+          </div>
+          <div id="buttons">
+            <button id="BTC" onClick={this.buttonChangeCrypto}>Bitcoin (BTC)</button>
+            <button id="ETH" onClick={this.buttonChangeCrypto}>Ethereum (ETH)</button>
+            <button id="LTC" onClick={this.buttonChangeCrypto}>Litecoin (LTC)</button>
+            <button id="ADA" onClick={this.buttonChangeCrypto}>Cardano (ADA)</button>
+            <button id="DOT" onClick={this.buttonChangeCrypto}>Polkadot (DOT)</button>
+            <button id="BCH" onClick={this.buttonChangeCrypto}>Bitcoin Cash (BCH)</button>
+            <button id="XLM" onClick={this.buttonChangeCrypto}>Stellar (XLM)</button>
+            <button id="BNB" onClick={this.buttonChangeCrypto}>Binance Coin (BNB)</button>
+            <button id="USDT" onClick={this.buttonChangeCrypto}>Tether (USDT)</button>
+            <button id="XMR" onClick={this.buttonChangeCrypto}>Monero (XMR)</button>
+          </div>
+
+
         </div>
         <article>
           {this.state.inputValue === '' ? <Plot
@@ -167,14 +206,13 @@ class Crypto extends Component {
                   color: '#1F8EF1',
                   size: 8
                 },
-                // 003f5c
                 line: { shape: 'spline' },
                 name: `${this.state.ltcCode} (${this.state.ltcName})`
               },
             ]}
             config={{ responsive: true }}
             layout={{
-              // width: 1000, height: 400,
+              width: 800, height: 400,
               autosize: true,
               font: { size: 14, color: '#F0F0F1' },
               title: 'Popular Crypto Compares : BTC - ETH - LTC', xaxis: {
@@ -185,9 +223,6 @@ class Crypto extends Component {
               }, plot_bgcolor: "#27293D ", paper_bgcolor: "#27293D ",
 
             }}
-            useResizeHandler={true}
-            style={{ width: "100%", height: "100%" }}
-
           /> : <Plot
             data={[
               {
@@ -213,8 +248,6 @@ class Crypto extends Component {
             }}
           />}
         </article>
-
-
       </section>
 
     );
