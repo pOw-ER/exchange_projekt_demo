@@ -89,9 +89,7 @@ class Crypto extends Component {
       })
 
   }
-  // componentDidUpdate() {
 
-  // }
   handleChangeCrypto = (event) => {
     this.setState({ inputValue: event.target.previousSibling.value }, () => {
       console.log(this.state.inputValue.toUpperCase());

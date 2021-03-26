@@ -12,7 +12,7 @@ const Apis = [
 function DashboardExchange(props) {
   const usdShort = "USD";
   const eurShort = "EUR";
-  const cnyShort = "CNY";
+  // const cnyShort = "CNY";
 
   const [usd, setUsd] = useState(null);
   const [eur, setEur] = useState(null);
@@ -22,18 +22,18 @@ function DashboardExchange(props) {
   const [cnyUsd, setCnyUsd] = useState(null);
   const [eurCny, setEurCny] = useState(null);
 
-  useEffect((props) => {
-    const test = [];
+  // useEffect((props) => {
+  //   const test = [];
 
-    Axios.get(
-      `https://www.alphavantage.co/query?function=FX_MONTHLY&from_symbol=${usdShort}&to_symbol=${eurShort}&apikey=WASLX9XSH9KER05U`
-    ).then((response) => {
-      setUsd(
-        response.data["Time Series FX (Monthly)"]["2021-03-25"]["4. close"]
-      );
-      console.log(response.data);
-    });
-  }, []);
+  //   Axios.get(
+  //     `https://www.alphavantage.co/query?function=FX_MONTHLY&from_symbol=${usdShort}&to_symbol=${eurShort}&apikey=WASLX9XSH9KER05U`
+  //   ).then((response) => {
+  //     setUsd(
+  //       response.data["Time Series FX (Monthly)"]["2021-03-25"]["4. close"]
+  //     );
+  //     console.log(response.data);
+  //   });
+  // }, []);
 
   // useEffect((props) => {
   //   Axios.get(

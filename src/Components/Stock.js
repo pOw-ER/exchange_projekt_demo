@@ -82,7 +82,7 @@ class Stock extends Component {
     return (
       <section id="stock">
         <form>
-          <input type="search" placeholder="Currency Code" />
+          <input type="search" placeholder="Search Stock" />
           <i onClick={this.handleChangeFirma} className="fa fa-search"></i>
         </form>
         <div id="stock_div">

@@ -22,19 +22,24 @@ class News extends Component {
   render() {
     return (
       <div id="news">
-        <h1>NEWS</h1>
-        <div className="container">
-          {this.state.info.map((article, i) =>
-            <CardNews
-              key={i}
-              img={article.urlToImage}
-              title={article.title}
-              url={article.url}
-              date={article.publishedAt}
-            />
-          )}
+        <div className="row">
+          <div className="col-4"></div>
+          <div className="col-8-md">
+            <div className="row row-cols-1 row-cols-md-3 g-4">
+              {this.state.info.map((article, i) =>
+                <CardNews
+                  key={i}
+                  img={article.urlToImage}
+                  title={article.title}
+                  url={article.url}
+                  date={article.publishedAt}
+                  description={article.description}
+                />
+              )}
+            </div>
+          </div>
         </div>
-      </div >
+      </div>
     );
   }
 }
