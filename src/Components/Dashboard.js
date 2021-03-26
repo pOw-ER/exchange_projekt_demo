@@ -1,40 +1,40 @@
-import React from "react";
-import { useState, useEffect } from "react";
+// import React from "react";
+// import { useState, useEffect } from "react";
 
-import DashboardStock from "./dashboard-components/DashboardStock";
-import DashboardCryptoStock from "./dashboard-components/DashboardCryptoStock";
-import DashboardExchange from "./dashboard-components/DashboardExchange";
-import Axios from "axios";
-import DashboardNews from "./dashboard-components/DashboardNews";
-import "./dashboard-components/Dashboard.css";
+// import DashboardStock from "./dashboard-components/DashboardStock";
+// import DashboardCryptoStock from "./dashboard-components/DashboardCryptoStock";
+// import DashboardExchange from "./dashboard-components/DashboardExchange";
+// import Axios from "axios";
+// import DashboardNews from "./dashboard-components/DashboardNews";
+// import "./dashboard-components/Dashboard.css";
 
-const apiList = ["BBFAIK97VXIR92KK", "0RLODS0QNRQX112V", "ZHJV5O1WC8KQE6JG"];
+// const apiList = ["BBFAIK97VXIR92KK", "0RLODS0QNRQX112V", "ZHJV5O1WC8KQE6JG"];
 
 function Dashboard(props) {
-  const [dataStock, setDataStock] = useState(null);
-  const [dataStock1, setDataStock1] = useState(null);
-  const [dataStock2, setDataStock2] = useState(null);
-  const [dataStock3, setDataStock3] = useState(null);
-  const [cryptoStock, setCryptoStock] = useState(null);
-  const [cryptoStock1, setCryptoStock1] = useState(null);
-  const [cryptoStock2, setCryptoStock2] = useState(null);
-  const [cryptoStock3, setCryptoStock3] = useState(null);
+  // const [dataStock, setDataStock] = useState(null);
+  // const [dataStock1, setDataStock1] = useState(null);
+  // const [dataStock2, setDataStock2] = useState(null);
+  // const [dataStock3, setDataStock3] = useState(null);
+  // const [cryptoStock, setCryptoStock] = useState(null);
+  // const [cryptoStock1, setCryptoStock1] = useState(null);
+  // const [cryptoStock2, setCryptoStock2] = useState(null);
+  // const [cryptoStock3, setCryptoStock3] = useState(null);
   // const bitcoin = "BTC";
   // const etherium = "ETH";
   // const ripple = "XRP";
   // const binance = "BNB";
-  const microsoft = "msft";
+  // const microsoft = "msft";
   // const tesla = "tsla";
   // const nike = "nke";
 
-  useEffect((props) => {
-    Axios.get(
-      `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${microsoft}&apikey=4NR58PGCYNXVBISR`
-    ).then((response) => {
-      setDataStock(response.data);
-      console.log(response.data);
-    });
-  }, []);
+  // useEffect((props) => {
+  //   Axios.get(
+  //     `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${microsoft}&apikey=4NR58PGCYNXVBISR`
+  //   ).then((response) => {
+  //     setDataStock(response.data);
+  //     console.log(response.data);
+  //   });
+  // }, []);
   //www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${microsoft}&apikey=demo
 
   // useEffect((props) => {
@@ -64,14 +64,14 @@ function Dashboard(props) {
   //   });
   // }, []);
 
-  useEffect((props) => {
-    Axios.get(
-      `https://www.alphavantage.co/query?function=DIGITAL_CURRENCY_MONTHLY&symbol=BTC&market=CNY&apikey=5L9AJNFRZZ6RX5KK`
-    ).then((response) => {
-      setCryptoStock(response.data);
-      console.log(response.data);
-    });
-  }, []);
+  // useEffect((props) => {
+  //   Axios.get(
+  //     `https://www.alphavantage.co/query?function=DIGITAL_CURRENCY_MONTHLY&symbol=BTC&market=CNY&apikey=5L9AJNFRZZ6RX5KK`
+  //   ).then((response) => {
+  //     setCryptoStock(response.data);
+  //     console.log(response.data);
+  //   });
+  // }, []);
 
   // useEffect((props) => {
   //   Axios.get(
@@ -103,7 +103,7 @@ function Dashboard(props) {
   //0RLODS0QNRQX112V
   return (
     <section id="dashboard">
-      <div className="dashboard-wrapper">
+      {/* <div className="dashboard-wrapper">
         <h3 id="dashboard-header">Dashboard</h3>
         <div className="dashboard-firstRow">
           {
@@ -130,7 +130,7 @@ function Dashboard(props) {
           </div>
         </div>
         <DashboardNews />
-      </div>
+      </div> */}
     </section>
   );
 }
