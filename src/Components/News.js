@@ -10,7 +10,7 @@ class News extends Component {
   }
   componentDidMount() {
     axios.get(
-      "http://newsapi.org/v2/everything?q=bitcoin&apiKey=966865887cbf40099e1320b60c682e88"
+      "https://newsapi.org/v2/everything?q=bitcoin&apiKey=966865887cbf40099e1320b60c682e88"
     )
       .then(response => {
         this.setState({ info: response.data.articles });
